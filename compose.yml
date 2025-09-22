@@ -24,7 +24,7 @@ services:
       # Container-specific overrides
       - OPENSEARCH_HOST=http://opensearch:9200
       - OPENSEARCH__HOST=http://opensearch:9200
-      - OLLAMA_HOST=http://ollama:11434
+      - OLLAMA_HOST=http://ollama:11435
       - POSTGRES_DATABASE_URL=postgresql+psycopg2://rag_user:rag_password@postgres:5432/rag_db
       - LANGFUSE__HOST=http://langfuse:3000
       - REDIS__HOST=redis
@@ -114,7 +114,7 @@ services:
       - POSTGRES_DATABASE_URL=postgresql+psycopg2://rag_user:rag_password@postgres:5432/rag_db
       - OPENSEARCH_HOST=http://opensearch:9200
       - OPENSEARCH__HOST=http://opensearch:9200
-      - OLLAMA_HOST=http://ollama:11434
+      - OLLAMA_HOST=http://ollama:11435
       - REDIS__HOST=redis
     volumes:
       - ./airflow/dags:/opt/airflow/dags
@@ -137,7 +137,7 @@ services:
     image: ollama/ollama:0.11.2
     container_name: rag-ollama
     ports:
-      - "11434:11434"
+      - "11435:11435"
     volumes:
       - ollama_data:/root/.ollama
     healthcheck:
